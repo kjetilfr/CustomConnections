@@ -54,7 +54,7 @@ function nextCategory(counter) {
         count ++;
         //document.getElementById("lives").style.display = "none";
         //showAll()
-        generateShortenedLink()
+        generateLinkWithKeyAndData()
     }
 }
 

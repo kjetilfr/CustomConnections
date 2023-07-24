@@ -16,11 +16,11 @@ var selectedItems = [];
 
 function run() {
     document.getElementById("submit").onclick = function() {submitCategory()};
-    //Add lives at the bottom
-    const shortKey = parseUrlParams();
-    const encryptedData = localStorage.getItem(shortKey);
+    
+    const urlParams = parseUrlParams();
+    const encryptedData = decodeURIComponent(urlParams.key);
     if (encryptedData) {
-        const decryptedData = decryptData(encryptedData);
+        const decryptedData = decryptData(decodeURIComponent(urlParams.data));
         const stringedData = JSON.stringify(decryptedData)
         const jsonDataObject = JSON.parse(stringedData)
         category1 = [decryptedData.category1[1], decryptedData.category1[2], decryptedData.category1[3], decryptedData.category1[4]];
@@ -34,29 +34,40 @@ function run() {
 
         amountOfLives = parseInt(decryptedData.lives);
         tableCreate()
-        
-        
     } else {
-    document.getElementById('titlePage').innerText = 'Invalid or expired link.';
+    //document.getElementById('titlePage').innerText = 'Invalid or expired link.';
     }
+
     
+    if (urlParams.key && urlParams.data) {
+      const decryptedData = decryptData(decodeURIComponent(urlParams.data));
+      document.getElementById('receivedData').innerText = `Received Data: ${JSON.stringify(decryptedData)}`;
+    } else {
+      document.getElementById('receivedData').innerText = 'Invalid or expired link.';
+    }
+    //Update lives at the bottom
     document.getElementById("amountOfLives").innerText = amountOfLives;
 }
 
 
 function parseUrlParams() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('key');
-}
-
-function decryptData(encryptedData) {
-  // Simple decryption function (this is just for illustration purposes, not secure)
-  let decryptedData = '';
-  for (let i = 0; i < encryptedData.length; i++) {
-    decryptedData += String.fromCharCode(encryptedData.charCodeAt(i) - 1);
+    const params = new URLSearchParams(window.location.search);
+    return {
+      key: params.get('key'),
+      data: params.get('data'),
+    };
   }
-  return JSON.parse(decryptedData);
-}
+
+  function decryptData(encryptedData) {
+    // Simple decryption function (this is just for illustration purposes, not secure)
+    let decryptedData = '';
+    for (let i = 0; i < encryptedData.length; i++) {
+      decryptedData += String.fromCharCode(encryptedData.charCodeAt(i) - 1);
+    }
+    return JSON.parse(decryptedData);
+  }
+
+
 
 function tableCreate() {
     //body reference 
