@@ -3,7 +3,7 @@ function generateShortenedLink() {
     const encryptedData = encryptData(data);
     const shortKey = generateShortKey();
     const baseUrl = "https://kjetilfr.github.io/CustomConnections/"; // Change this to your actual domain
-    const link = `${baseUrl}/receive.html?key=${shortKey}`;
+    const link = `${baseUrl}receive.html?key=${shortKey}`;
     const code = shortKey;
     saveDataToLocalStorage(shortKey, encryptedData);
     document.getElementById('generatedLinkPreText').innerText = `Link: `;
