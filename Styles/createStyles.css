@@ -1,0 +1,203 @@
+/* Reset some default styles to improve consistency */
+body, h1, h2, label, button, input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  body {
+    background-color: #f7f7f7;
+    line-height: 1.6;
+  }
+  
+  /* Center the ConnectionsBox */
+  #ConnectionsBox {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add spacing between form elements */
+  div[id^="category"] {
+    margin-bottom: 20px;
+  }
+
+  div[id^="generatedLinkPreText"], div[id^="generatedCodePreText"] {
+    display: inline;
+  }
+
+  button {
+    display: inline;
+  }
+  
+  /* Styling for "Next" and "Show all" buttons */
+  #nextCategory,
+  #showAll {
+    background-color: #0d6efd;
+  }
+  
+  /* Styling for "Done" button */
+  #finish {
+    background-color: #198754;
+  }
+  
+  /* Styling for the generate link section */
+  #generateLinkContent {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #generateLinkContent h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  #generatedLink {
+    margin-top: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 480px) {
+    #ConnectionsBox, #generateLinkContent {
+      padding: 10px;
+    }
+  }
+  
+  #generateLinkContent {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    margin: 500px;
+    display: inline;
+    align-items: center;
+    max-width: 220px; /* Set a maximum width for the container */
+    flex-wrap: wrap; /* Allow the buttons to wrap if they exceed the width */
+  }
+
+  /* Style the "Generate New Link" button with custom size and hover effect */
+  button.generate-link-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px; /* Adjust the padding to make the button smaller */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline;
+    align-items: center;
+  }
+
+  button.generate-link-button svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px; /* Add spacing between icon and text */
+  }
+
+  button.generate-link-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Style the "Copy Link" button with custom size and hover effect */
+  button.copy-link-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px; /* Adjust the padding to make the button smaller */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline;
+    align-items: center;
+    position: relative; /* Add positioning context for the ::after pseudo-element */
+  }
+
+  button.copy-link-button svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px; /* Add spacing between icon and text */
+  }
+
+  button.copy-link-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Custom hover effect to show "Copy" text on the "Copy Link" button */
+  button.copy-link-button:hover::after {
+    content: "Copy";
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0; /* Start with zero opacity */
+    transform: translateY(-100%); /* Move the text above the button */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  button.copy-link-button:hover::after {
+    opacity: 1; /* Show the "Copy" text on hover */
+    transform: translateY(-120%); /* Move the text a bit more above the button */
+  }
+
+  /* Responsive styles */
+  @media (max-width: 480px) {
+  #receivedData, #data1, table {
+    padding: 10px;
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack the buttons below each other on smaller screens */
+    max-width: 100%; /* Reset the maximum width to take up the full width */
+  }
+}

@@ -1,0 +1,77 @@
+/* Reset some default styles to improve consistency */
+body, h1, h2, p, table, tr, td, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  body {
+    background-color: #f7f7f7;
+    line-height: 1.6;
+  }
+  
+  /* Center the content */
+  #receivedData, #category1, #category2, #category3, #category4, table {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 32px;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td {
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  td:hover {
+    background-color: #f2f2f2;
+  }
+  
+  #livesText {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  #amountOfLives {
+    font-weight: bold;
+  }
+  
+  button {
+    display: block;
+    margin: 20px auto;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 480px) {
+    #receivedData, #data1, table {
+      padding: 10px;
+    }
+  }

@@ -4,8 +4,12 @@ function generateShortenedLink() {
     const shortKey = generateShortKey();
     const baseUrl = window.location.origin; // Change this to your actual domain
     const link = `${baseUrl}/receive.html?key=${shortKey}`;
+    const code = shortKey;
     saveDataToLocalStorage(shortKey, encryptedData);
-    document.getElementById('generatedLink').innerText = `Share this link: ${link}`;
+    document.getElementById('generatedLinkPreText').innerText = `Link: `;
+    document.getElementById('generatedLink').innerText = link;
+    document.getElementById('generatedCodePreText').innerText = `Code: `;
+    document.getElementById('generatedCode').innerText = code;
 }
   
 function encryptData(data) {

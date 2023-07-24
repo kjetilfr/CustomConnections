@@ -27,11 +27,13 @@ function nextCategory(counter) {
     } else if (counter == 3) {
         document.getElementById("category4Content").style.display = "none";
         document.getElementById("extraDetails").style.display = "block";
+        document.getElementById("nextCategory").style.backgroundColor = "green";
+        document.getElementById("nextCategory").innerText = "Done";
     } else {
-        //document.getElementById("ConnectionsBox").style.display = "none";
+        document.getElementById("ConnectionsBox").style.display = "none";
         document.getElementById("generateLinkContent").style.display = "block";
         //document.getElementById("lives").style.display = "none";
-        showAll()
+        //showAll()
         generateShortenedLink()
     }
 }
@@ -56,3 +58,25 @@ function finishCategories() {
     document.getElementById("nextCategory").style.display = "block";
     count = 4;
 }
+
+function copyLinkToClipboard() {
+    const generatedLinkText = document.getElementById('generatedLink').innerText;
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = generatedLinkText;
+    document.body.appendChild(tempTextArea);
+    tempTextArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempTextArea);
+    alert('Link copied to clipboard!');
+  }
+
+  function copyCodeToClipboard() {
+    const generatedLinkText = document.getElementById('generatedCode').innerText;
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = generatedLinkText;
+    document.body.appendChild(tempTextArea);
+    tempTextArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempTextArea);
+    alert('Link copied to clipboard!');
+  }

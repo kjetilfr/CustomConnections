@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Connections</title>
+  <script src="./JScripts/createScript.js"></script>
+  <script src="./JScripts/createGenerateLink.js"></script>
+  <link rel="stylesheet" href="./Styles/createStyles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Add your custom styles here */
+  </style>
+</head>
+<body>
+  <div id="ConnectionsBox">
+    <h1>Custom Connections</h1>
+    <form id="connectionsForm">
+      <div id="category1Content">
+        <label for="category1"><h2>Category 1:</h2></label>
+        <input type="text" id="category1" required>
+        <br />
+        <label for="category1Answer1">Answer 1:</label>
+        <input type="text" id="category1Answer1" required>
+        <br />
+        <label for="category1Answer2">Answer 2:</label>
+        <input type="text" id="category1Answer2" required>
+        <br />
+        <label for="category1Answer3">Answer 3:</label>
+        <input type="text" id="category1Answer3" required>
+        <br />
+        <label for="category1Answer4">Answer 4:</label>
+        <input type="text" id="category1Answer4" required>
+      </div>
+      <div id="category2Content">
+        <label for="category2"><h2>Category 2:</h2></label>
+        <input type="text" id="category2" required>
+        <br />
+        <label for="category2Answer1">Answer 1:</label>
+        <input type="text" id="category2Answer1" required>
+        <br />
+        <label for="category2Answer2">Answer 2:</label>
+        <input type="text" id="category2Answer2" required>
+        <br />
+        <label for="category2Answer3">Answer 3:</label>
+        <input type="text" id="category2Answer3" required>
+        <br />
+        <label for="category2Answer4">Answer 4:</label>
+        <input type="text" id="category2Answer4" required>
+      </div>
+      <div id="category3Content">
+        <label for="category3"><h2>Category 3:</h2></label>
+        <input type="text" id="category3" required>
+        <br />
+        <label for="category3Answer1">Answer 1:</label>
+        <input type="text" id="category3Answer1" required>
+        <br />
+        <label for="category3Answer2">Answer 2:</label>
+        <input type="text" id="category3Answer2" required>
+        <br />
+        <label for="category3Answer3">Answer 3:</label>
+        <input type="text" id="category3Answer3" required>
+        <br />
+        <label for="category3Answer4">Answer 4:</label>
+        <input type="text" id="category3Answer4" required>
+      </div>
+      <div id="category4Content">
+        <label for="category4"><h2>Category 4:</h2></label>
+        <input type="text" id="category4" required>
+        <br />
+        <label for="category4Answer1">Answer 1:</label>
+        <input type="text" id="category4Answer1" required>
+        <br />
+        <label for="category4Answer2">Answer 2:</label>
+        <input type="text" id="category4Answer2" required>
+        <br />
+        <label for="category4Answer3">Answer 3:</label>
+        <input type="text" id="category4Answer3" required>
+        <br />
+        <label for="category4Answer4">Answer 4:</label>
+        <input type="text" id="category4Answer4" required>
+      </div>
+      <div id="extraDetails">
+        <label for="lives">Amount of lives:</label>
+        <input type="text" id="lives" required>
+      </div>
+    </form>
+    <button id="nextCategory">Next</button> <button id="showAll">Show all</button> <button onclick="finishCategories()" id="finish">Done</button>
+  </div>
+  <div id="generateLinkContent">
+    <h1>Send link to a friend or two!</h1>
+    <br />
+    <button onclick="generateShortenedLink()">Generate New Link</button>
+    <br />
+    <div id="share">
+    <div id="generatedLinkPreText"></div><span id="generatedLink"></span> <button class="copy-link-button" onclick="copyLinkToClipboard()"><i class="fas fa-copy"></i></button>
+    <div>or</div>
+    <div id="generatedCodePreText"></div><span id="generatedCode"></span> <button class="copy-link-button" onclick="copyCodeToClipboard()"><i class="fas fa-copy"></i></button>
+  </div>
+  </div>
+</body>
+</html>
