@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connections Game</title>
-  <script src="script.js"></script>
-  <script src="generateLink.js"></script>
+  <script src="./JScripts/indexScript.js""></script>
+  <script src="./JScripts/indexGenerateLink.js"></script>
   <style>
     /* Add your custom styles here */
   </style>
@@ -15,8 +15,8 @@
     <h1>Connections Game</h1>
     <form id="connectionsForm">
       <div id="category1Content">
-        <label for="category1">Category 1:</label>
-        <input type="text" id="category1" required>
+        <div class="category"><label for="category1"><h2>Category 1:</h2></label>
+        <input type="text" id="category1" required></div>
         <br />
         <label for="category1Answer1">Answer 1:</label>
         <input type="text" id="category1Answer1" required>
@@ -31,7 +31,7 @@
         <input type="text" id="category1Answer4" required>
       </div>
       <div id="category2Content">
-        <label for="category2">Category 2:</label>
+        <label for="category2"><h2>Category 2:</h2></label>
         <input type="text" id="category2" required>
         <br />
         <label for="category2Answer1">Answer 1:</label>
@@ -47,7 +47,7 @@
         <input type="text" id="category2Answer4" required>
       </div>
       <div id="category3Content">
-        <label for="category3">Category 3:</label>
+        <label for="category3"><h2>Category 3:</h2></label>
         <input type="text" id="category3" required>
         <br />
         <label for="category3Answer1">Answer 1:</label>
@@ -63,7 +63,7 @@
         <input type="text" id="category3Answer4" required>
       </div>
       <div id="category4Content">
-        <label for="category4">Category 4:</label>
+        <label for="category4"><h2>Category 4:</h2></label>
         <input type="text" id="category4" required>
         <br />
         <label for="category4Answer1">Answer 1:</label>
@@ -83,14 +83,12 @@
         <input type="text" id="lives" required>
       </div>
     </form>
-    <button id="nextCategory">Next</button>
+    <button id="nextCategory">Next</button><button id="showAll">Show all</button><button onclick="finishCategories()" id="finish">Done</button>
   </div>
   <div id="generateLinkContent">
     <h1>Send link to a friend or two!</h1>
-    <label for="dataInput">Data to Share:</label>
-    <input type="text" id="dataInput">
     <br />
-    <button onclick="generateShortenedLink()">Generate Link</button>
+    <button onclick="generateShortenedLink()">Generate New Link</button>
     <br />
     <div id="generatedLink"></div>
   </div>

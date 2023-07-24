@@ -1,11 +1,11 @@
-//var category1;
-//var category2;
-//var category3;
-//var category4;
-var category1 = ["Milk", "Water", "Coffee", "Tea"]
-var category2 = ["Volvo", "Nissan", "Merzedes", "BMW"]
-var category3 = ["League of legends", "Dota2", "CS:GO", "Smite"]
-var category4 = ["Staff", "Longsword", "Bow", "Crossbow"]
+var category1;
+var category2;
+var category3;
+var category4;
+//var category1 = ["Milk", "Water", "Coffee", "Tea"]
+//var category2 = ["Volvo", "Nissan", "Merzedes", "BMW"]
+//var category3 = ["League of legends", "Dota2", "CS:GO", "Smite"]
+//var category4 = ["Staff", "Longsword", "Bow", "Crossbow"]
 
 function parseUrlParams() {
   const params = new URLSearchParams(window.location.search);
@@ -28,15 +28,11 @@ if (encryptedData) {
     const stringedData = JSON.stringify(decryptedData)
     const jsonDataObject = JSON.parse(stringedData)
     document.getElementById('receivedData').innerHTML = `Received Data: ${JSON.stringify(decryptedData)}`;
-    //console.log(typeof(decryptedData))
-    //console.log(decryptedData.category3[0])
-    //console.log(stringedData)
-    //console.log(typeof(stringedData))
     document.getElementById('data1').innerText = decryptedData.firstName;
-    //category1 = [decryptedData.category1[1], decryptedData.category1[2], decryptedData.category1[3], decryptedData.category1[4]];
-    //category2 = [decryptedData.category2[1], decryptedData.category2[2], decryptedData.category2[3], decryptedData.category2[4]];
-    //category3 = [decryptedData.category3[1], decryptedData.category3[2], decryptedData.category3[3], decryptedData.category3[4]];
-    //category4 = [decryptedData.category4[1], decryptedData.category4[2], decryptedData.category4[3], decryptedData.category4[4]];
+    category1 = [decryptedData.category1[1], decryptedData.category1[2], decryptedData.category1[3], decryptedData.category1[4]];
+    category2 = [decryptedData.category2[1], decryptedData.category2[2], decryptedData.category2[3], decryptedData.category2[4]];
+    category3 = [decryptedData.category3[1], decryptedData.category3[2], decryptedData.category3[3], decryptedData.category3[4]];
+    category4 = [decryptedData.category4[1], decryptedData.category4[2], decryptedData.category4[3], decryptedData.category4[4]];
     tableCreate()
 } else {
   document.getElementById('receivedData').innerText = 'Invalid or expired link.';
