@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function createCustomConnections() {
     const baseUrl = window.location.origin;
-    const link = `${baseUrl}/create.html`;
+    const link = `https://kjetilfr.github.io/CustomConnections/`;
     window.location.href = link;
 }
   
@@ -39,7 +39,7 @@ function loadConnection() {
   
 function handleTextSubmit() {
     const inputField = document.getElementById("textInput").value;
-    const baseUrl = window.location.origin;
+    const baseUrl = "https://kjetilfr.github.io/CustomConnections/";
     const link = `${baseUrl}/receive.html?key=${inputField}`;
     window.location.href = link;
 }
