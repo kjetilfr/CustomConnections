@@ -1,0 +1,77 @@
+function generateShortenedLink() {
+    const data = getData();
+    const encryptedData = encryptData(data);
+    const shortKey = generateShortKey();
+    const baseUrl = window.location.origin; // Change this to your actual domain
+    const link = `${baseUrl}/receive.html?key=${shortKey}`;
+    saveDataToLocalStorage(shortKey, encryptedData);
+    document.getElementById('generatedLink').innerText = `Share this link: ${link}`;
+}
+  
+function encryptData(data) {
+    // Simple encryption function (this is just for illustration purposes, not secure)
+    const jsonString = JSON.stringify(data);
+    let encryptedData = '';
+    for (let i = 0; i < jsonString.length; i++) {
+        encryptedData += String.fromCharCode(jsonString.charCodeAt(i) + 1);
+    }
+    return encryptedData;
+}
+  
+function decryptData(encryptedData) {
+    // Simple decryption function (this is just for illustration purposes, not secure)
+    let decryptedData = '';
+    for (let i = 0; i < encryptedData.length; i++) {
+        decryptedData += String.fromCharCode(encryptedData.charCodeAt(i) - 1);
+    }
+    return JSON.parse(decryptedData);
+}
+  
+function generateShortKey() {
+    // Simple hash function to generate a short key (this is just for illustration purposes, not secure)
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+  
+function saveDataToLocalStorage(key, data) {
+    // Save the encrypted data in the browser's local storage (this is just for illustration purposes, not secure)
+    localStorage.setItem(key, data);
+}
+
+function getData() {
+    var data = {};
+    var category1 = [];
+    category1.push(document.getElementById("category1").value);
+    category1.push(document.getElementById("category1Answer1").value);
+    category1.push(document.getElementById("category1Answer2").value);
+    category1.push(document.getElementById("category1Answer3").value);
+    category1.push(document.getElementById("category1Answer4").value);
+    data.category1 = category1;
+    var category2 = [];
+    category2.push(document.getElementById("category2").value);
+    category2.push(document.getElementById("category2Answer1").value);
+    category2.push(document.getElementById("category2Answer2").value);
+    category2.push(document.getElementById("category2Answer3").value);
+    category2.push(document.getElementById("category2Answer4").value);
+    data.category2 = category2;
+    var category3 = [];
+    category3.push(document.getElementById("category3").value);
+    category3.push(document.getElementById("category3Answer1").value);
+    category3.push(document.getElementById("category3Answer2").value);
+    category3.push(document.getElementById("category3Answer3").value);
+    category3.push(document.getElementById("category3Answer4").value);
+    data.category3 = category3;
+    var category4 = [];
+    category4.push(document.getElementById("category4").value);
+    category4.push(document.getElementById("category4Answer1").value);
+    category4.push(document.getElementById("category4Answer2").value);
+    category4.push(document.getElementById("category4Answer3").value);
+    category4.push(document.getElementById("category4Answer4").value);
+    data.category4 = category4;
+    data.lives = document.getElementById("lives").value;
+    return data
+}
