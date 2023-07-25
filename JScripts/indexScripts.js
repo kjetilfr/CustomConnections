@@ -20,8 +20,8 @@ function loadConnection() {
     const loadButton = document.getElementById("load");
 
     // Remove the buttons
-    createButton.display = "none";
-    loadButton.display = "none";
+    createButton.style.display = "none";
+    loadButton.style.display = "none";
   
     // Create and append the input field
     const inputField = document.createElement("input");
@@ -53,6 +53,8 @@ function goBack() {
     document.getElementById("textInput").remove();
     createButton.r
     loadButton.remove();
-    createButton.display = "block";
-    loadButton.display = "block";
+    const createButton = document.getElementById("create");
+    const loadButton = document.getElementById("load");
+    createButton.style.display = "block";
+    loadButton.style.display = "block";
 }
