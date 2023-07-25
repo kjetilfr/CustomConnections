@@ -20,7 +20,8 @@ function run() {
     const urlParams = parseUrlParams();
     const encryptedData = decodeURIComponent(urlParams.key);
     if (encryptedData) {
-        const decryptedData = decryptData(decodeURIComponent(urlParams.data));
+        var decryptedData = decodeURIComponent(urlParams.data);
+        decryptedData = decryptData(decryptedData)
         const stringedData = JSON.stringify(decryptedData)
         const jsonDataObject = JSON.parse(stringedData)
         category1 = [decryptedData.category1[1], decryptedData.category1[2], decryptedData.category1[3], decryptedData.category1[4]];
@@ -56,17 +57,16 @@ function parseUrlParams() {
       key: params.get('key'),
       data: params.get('data'),
     };
-  }
+}
 
-  function decryptData(encryptedData) {
+function decryptData(encryptedData) {
     // Simple decryption function (this is just for illustration purposes, not secure)
     let decryptedData = '';
     for (let i = 0; i < encryptedData.length; i++) {
       decryptedData += String.fromCharCode(encryptedData.charCodeAt(i) - 1);
     }
     return JSON.parse(decryptedData);
-  }
-
+}
 
 
 function tableCreate() {

@@ -2,7 +2,7 @@ function generateLinkWithKeyAndData() {
     const data = getData();
     const encryptedData = encryptData(data);
     const shortKey = generateShortKey();
-    const baseUrl = window.location.origin; // Change this to your actual domain
+    const baseUrl = "https://kjetilfr.github.io/CustomConnections/"; // Change this to your actual domain
     const link = `${baseUrl}/receive.html?key=${shortKey}&data=${encodeURIComponent(encryptedData)}`;
     const code = `key=${shortKey}&data=${encodeURIComponent(encryptedData)}`;
     document.getElementById('generatedLinkPreText').innerText = `Link: `;
@@ -11,7 +11,7 @@ function generateLinkWithKeyAndData() {
     document.getElementById('generatedCode').innerText = code;
   }
   
-  function encryptData(data) {
+function encryptData(data) {
     // Simple encryption function (this is just for illustration purposes, not secure)
     const jsonString = JSON.stringify(data);
     let encryptedData = '';
@@ -19,9 +19,9 @@ function generateLinkWithKeyAndData() {
       encryptedData += String.fromCharCode(jsonString.charCodeAt(i) + 1);
     }
     return encryptedData;
-  }
+}
   
-  function generateShortKey() {
+function generateShortKey() {
     // Simple hash function to generate a short key (this is just for illustration purposes, not secure)
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -29,20 +29,6 @@ function generateLinkWithKeyAndData() {
       result += characters.charAt(Math.floor(Math.random() * characters.length));
     }
     return result;
-  }
-  
-function decryptData(encryptedData) {
-    // Simple decryption function (this is just for illustration purposes, not secure)
-    let decryptedData = '';
-    for (let i = 0; i < encryptedData.length; i++) {
-        decryptedData += String.fromCharCode(encryptedData.charCodeAt(i) - 1);
-    }
-    return JSON.parse(decryptedData);
-}
-
-function saveDataToLocalStorage(key, data) {
-    // Save the encrypted data in the browser's local storage (this is just for illustration purposes, not secure)
-    localStorage.setItem(key, data);
 }
 
 function getData() {
