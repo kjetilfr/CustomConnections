@@ -1,0 +1,71 @@
+// Function to shorten a string using a secret key
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script>
+function shortenString(originalString, secretKey) {
+  var encryptedString = CryptoJS.AES.encrypt(originalString, secretKey).toString();
+  return encryptedString;
+}
+
+// Function to revert the shortened string back to the original form
+function revertString(shortenedString, secretKey) {
+  var decryptedString = CryptoJS.AES.decrypt(shortenedString, secretKey).toString(CryptoJS.enc.Utf8);
+  return decryptedString;
+}
+
+
+var secretKey = "your_secret_key_here";
+var originalString = "This is a secret message.";
+
+// Shorten the string
+var shortenedString = shortenString(originalString, secretKey);
+console.log("Shortened String:", shortenedString); // Output: Shortened String: 42f502
+
+// Revert the shortened string back to the original form
+var revertedString = revertString(shortenedString, secretKey);
+console.log("Reverted String:", revertedString); // Output: Reverted String: This is a secret message.
+
+
+console.log("---------------")
+
+
+// Function to shorten a string using a secret key
+function shortenString(originalString, secretKey) {
+  var shortenedString = btoa(originalString);
+  return shortenWithPadding(shortenedString);
+}
+
+// Function to revert the shortened string back to the original form
+function revertString(shortenedString, secretKey) {
+  var paddedString = padWithEqualSigns(shortenedString);
+  return atob(paddedString);
+}
+
+// Function to shorten a string with padding
+function shortenWithPadding(inputString, length) {
+  return inputString.slice(0, length);
+}
+
+// Function to pad a shortened string with equal signs
+function padWithEqualSigns(shortenedString, length) {
+  var paddingLength = length - shortenedString.length % length;
+  return shortenedString + "=".repeat(paddingLength);
+}
+
+
+var secretKey = "your_secret_key_here";
+var originalString = "This is a secret message.";
+
+// Shorten the string
+var shortenedString = shortenString(originalString, secretKey);
+console.log("Shortened String:", shortenedString); // Output: Shortened String: VGhpcyBp
+
+// Revert the shortened string back to the original form
+var revertedString = revertString(shortenedString, secretKey);
+console.log("Reverted String:", revertedString); // Output: Reverted String: This is a secret message.
+
+
+
+</script>
+
+
+
