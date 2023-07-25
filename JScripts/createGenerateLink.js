@@ -1,10 +1,10 @@
 function generateLinkWithKeyAndData() {
     const data = getData();
     const encryptedData = encryptData(data);
-    //const shortKey = generateShortKey();
+    const shortKey = generateShortKey();
     const baseUrl = "https://kjetilfr.github.io/CustomConnections/"; // Change this to your actual domain
     const link = `${baseUrl}receive.html?data=${encodeURIComponent(encryptedData)}`;
-    const code = `${encodeURIComponent(encryptedData)}`;
+    const code = `data=${encodeURIComponent(encryptedData)}`;
     document.getElementById('generatedLinkPreText').innerText = `Link: `;
     document.getElementById('generatedLink').innerText = link;
     document.getElementById('generatedCodePreText').innerText = `Code: `;

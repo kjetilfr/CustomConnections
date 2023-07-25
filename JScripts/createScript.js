@@ -7,7 +7,6 @@ function run() {
     document.getElementById("category3Content").style.display = "none";
     document.getElementById("category4Content").style.display = "none";
     document.getElementById("generateLinkContent").style.display = "none";
-    document.getElementById("finish").style.display = "none";
     document.getElementById("extraDetails").style.display = "none";
     document.getElementById("nextCategory").onclick = function() {nextCategory(count)};
     document.getElementById("showAll").onclick = function() {showAll()};
@@ -40,6 +39,9 @@ function nextCategory(counter) {
         }
     } else if (counter == 3) {
         if (document.getElementById("category4").value !== "" && document.getElementById("category4Answer1").value !== "" && document.getElementById("category4Answer2").value !== "" && document.getElementById("category4Answer3").value !== "" && document.getElementById("category4Answer4").value !== "") {
+            document.getElementById("category1Content").style.display = "none";
+            document.getElementById("category2Content").style.display = "none";
+            document.getElementById("category3Content").style.display = "none";
             document.getElementById("category4Content").style.display = "none";
             document.getElementById("extraDetails").style.display = "block";
             document.getElementById("nextCategory").style.backgroundColor = "green";
@@ -63,9 +65,9 @@ function showAll() {
     document.getElementById("category2Content").style.display = "block";
     document.getElementById("category3Content").style.display = "block";
     document.getElementById("category4Content").style.display = "block";
-    document.getElementById("finish").style.display = "block";
-    document.getElementById("nextCategory").style.display = "none";
+    document.getElementById("nextCategory").innerText = "Next";
     document.getElementById("showAll").style.display = "none";
+    count = 3;
 }
 
 function finishCategories() {
@@ -73,7 +75,8 @@ function finishCategories() {
     document.getElementById("category2Content").style.display = "none";
     document.getElementById("category3Content").style.display = "none";
     document.getElementById("category4Content").style.display = "none";
-    document.getElementById("finish").style.display = "none";
+    document.getElementById("nextCategory").style.backgroundColor = "green";
+    document.getElementById("nextCategory").innerText = "Done";
     document.getElementById("extraDetails").style.display = "block";
     document.getElementById("nextCategory").style.display = "block";
     count = 4;
