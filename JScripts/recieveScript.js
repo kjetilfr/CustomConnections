@@ -157,10 +157,10 @@ function allIsInSameCategory(items) {
             document.getElementById("category2").innerText = category2Name + ": " + items[0].textContent + ", " + items[1].textContent + ", " + items[2].textContent + ", " + items[3].textContent;
         } else if (categories3 === 4) {
             document.getElementById("category3").style.display = "block";
-            document.getElementById("category3").innerText = category2Name + ": " + items[0].textContent + ", " + items[1].textContent + ", " + items[2].textContent + ", " + items[3].textContent;
+            document.getElementById("category3").innerText = category3Name + ": " + items[0].textContent + ", " + items[1].textContent + ", " + items[2].textContent + ", " + items[3].textContent;
         } else if (categories4 === 4) {
             document.getElementById("category4").style.display = "block";
-            document.getElementById("category4").innerText = category2Name + ": " + items[0].textContent + ", " + items[1].textContent + ", " + items[2].textContent + ", " + items[3].textContent;
+            document.getElementById("category4").innerText = category4Name + ": " + items[0].textContent + ", " + items[1].textContent + ", " + items[2].textContent + ", " + items[3].textContent;
         }
         var amountCorrect = 0;
         let i = 0;
