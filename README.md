@@ -1,3 +1,3 @@
 # CustomConnections
 
-kjetilfr.github.io/CustomConnections/index.html
+<a href="https://kjetilfr.github.io/CustomConnections/index.html">kjetilfr.github.io/CustomConnections/index.html</a>
