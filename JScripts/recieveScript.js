@@ -18,7 +18,7 @@ function run() {
     document.getElementById("submit").onclick = function() {submitCategory()};
     
     const urlParams = parseUrlParams();
-    const encryptedData = decodeURIComponent(urlParams.key);
+    const encryptedData = decodeURIComponent(urlParams.data);
     if (encryptedData) {
         var decryptedData = decodeURIComponent(urlParams.data);
         decryptedData = decryptData(decryptedData)
@@ -36,12 +36,11 @@ function run() {
         amountOfLives = parseInt(decryptedData.lives);
         tableCreate()
     } else {
-    //document.getElementById('titlePage').innerText = 'Invalid or expired link.';
+    document.getElementById('titlePage').innerText = 'Invalid or expired link.';
     }
-
     
-    if (urlParams.key && urlParams.data) {
-      const decryptedData = decryptData(decodeURIComponent(urlParams.data));
+    if (urlParams.data) {
+      //const decryptedData = decryptData(decodeURIComponent(urlParams.data));
       document.getElementById('receivedData').innerText = `Received Data: ${JSON.stringify(decryptedData)}`;
     } else {
       document.getElementById('receivedData').innerText = 'Invalid or expired link.';
@@ -58,6 +57,7 @@ function parseUrlParams() {
       data: params.get('data'),
     };
 }
+
 
 function decryptData(encryptedData) {
     // Simple decryption function (this is just for illustration purposes, not secure)
@@ -137,7 +137,6 @@ function selectItem(cell) {
         console.log(selectedItems)
     }
 }
-
 
 function submitCategory() {
     if (selectedItems.length == 4) {

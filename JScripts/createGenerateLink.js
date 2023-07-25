@@ -1,15 +1,15 @@
 function generateLinkWithKeyAndData() {
     const data = getData();
     const encryptedData = encryptData(data);
-    const shortKey = generateShortKey();
+    //const shortKey = generateShortKey();
     const baseUrl = "https://kjetilfr.github.io/CustomConnections/"; // Change this to your actual domain
-    const link = `${baseUrl}receive.html?key=${shortKey}&data=${encodeURIComponent(encryptedData)}`;
-    const code = `key=${shortKey}&data=${encodeURIComponent(encryptedData)}`;
+    const link = `${baseUrl}receive.html?data=${encodeURIComponent(encryptedData)}`;
+    const code = `data=${encodeURIComponent(encryptedData)}`;
     document.getElementById('generatedLinkPreText').innerText = `Link: `;
     document.getElementById('generatedLink').innerText = link;
     document.getElementById('generatedCodePreText').innerText = `Code: `;
     document.getElementById('generatedCode').innerText = code;
-  }
+}
   
 function encryptData(data) {
     // Simple encryption function (this is just for illustration purposes, not secure)
@@ -19,16 +19,6 @@ function encryptData(data) {
       encryptedData += String.fromCharCode(jsonString.charCodeAt(i) + 1);
     }
     return encryptedData;
-}
-  
-function generateShortKey() {
-    // Simple hash function to generate a short key (this is just for illustration purposes, not secure)
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
-    for (let i = 0; i < 6; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return result;
 }
 
 function getData() {
