@@ -18,10 +18,10 @@ function loadConnection() {
     const connectionsBox = document.getElementById("ConnectionsBox");
     const createButton = document.getElementById("create");
     const loadButton = document.getElementById("load");
-  
+
     // Remove the buttons
-    createButton.remove();
-    loadButton.remove();
+    createButton.display = "none";
+    loadButton.display = "none";
   
     // Create and append the input field
     const inputField = document.createElement("input");
@@ -34,7 +34,11 @@ function loadConnection() {
     const submitButton = document.createElement("button");
     submitButton.textContent = "Submit";
     submitButton.onclick = handleTextSubmit;
+    submitButton.id = "submitButton"
     connectionsBox.appendChild(submitButton);
+    const backButton = document.createElement("button");
+    backButton.textContent = "Back"
+    backButton.onclick = goBack;
 }
   
 function handleTextSubmit() {
@@ -42,4 +46,13 @@ function handleTextSubmit() {
     const baseUrl = "https://kjetilfr.github.io/CustomConnections/";
     const link = `${baseUrl}receive.html?data=${inputField}`;
     window.location.href = link;
+}
+
+function goBack() {
+    document.getElementById("submitButton").remove();
+    document.getElementById("textInput").remove();
+    createButton.r
+    loadButton.remove();
+    createButton.display = "block";
+    loadButton.display = "block";
 }
