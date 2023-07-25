@@ -40,6 +40,6 @@ function loadConnection() {
 function handleTextSubmit() {
     const inputField = document.getElementById("textInput").value;
     const baseUrl = "https://kjetilfr.github.io/CustomConnections/";
-    const link = `${baseUrl}receive.html?key=${inputField}`;
+    const link = `${baseUrl}receive.html?data=${inputField}`;
     window.location.href = link;
 }

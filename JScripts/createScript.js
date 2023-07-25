@@ -98,5 +98,5 @@ function copyLinkToClipboard() {
     tempTextArea.select();
     document.execCommand('copy');
     document.body.removeChild(tempTextArea);
-    alert('Link copied to clipboard!');
+    alert('Code copied to clipboard!');
   }
