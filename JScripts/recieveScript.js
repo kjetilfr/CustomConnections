@@ -38,13 +38,6 @@ function run() {
     } else {
     document.getElementById('titlePage').innerText = 'Invalid or expired link.';
     }
-    
-    if (urlParams.data) {
-      //const decryptedData = decryptData(decodeURIComponent(urlParams.data));
-      document.getElementById('receivedData').innerText = `Received Data: ${JSON.stringify(decryptedData)}`;
-    } else {
-      document.getElementById('receivedData').innerText = 'Invalid or expired link.';
-    }
     //Update lives at the bottom
     document.getElementById("amountOfLives").innerText = amountOfLives;
 }
