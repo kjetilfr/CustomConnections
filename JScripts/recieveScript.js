@@ -244,5 +244,14 @@ function correctCategory() {
 }
 
 function victory() {
-    alert("YOU ARE VICTORIOUS!")
+    alertOverlay.classList.add('active');
 }
+
+  closeAlertButton.addEventListener('click', () => {
+    alertOverlay.classList.remove('active');
+  });
+
+  const okButton = document.getElementById('okButton');
+  okButton.addEventListener('click', () => {
+    alertOverlay.classList.remove('active');
+  });
