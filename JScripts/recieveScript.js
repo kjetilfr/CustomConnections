@@ -15,6 +15,29 @@ var lostGame = false;
 var selectedItems = [];
 
 function run() {
+    const closeWinAlertButton = document.getElementById('closeWinAlertButton');
+    const winAlertOverlay = document.getElementById('winAlertOverlay');
+
+    closeWinAlertButton.addEventListener('click', () => {
+      winAlertOverlay.classList.remove('active');
+    });
+
+    const okButton = document.getElementById('okButton');
+    okButton.addEventListener('click', () => {
+      winAlertOverlay.classList.remove('active');
+    });
+
+    const closeLoseAlertButton = document.getElementById('closeLoseAlertButton');
+    const loseAlertOverlay = document.getElementById('loseAlertOverlay');
+
+    closeLoseAlertButton.addEventListener('click', () => {
+      loseAlertOverlay.classList.remove('active');
+    });
+
+    const okLoseButton = document.getElementById('okLoseButton');
+    okLoseButton.addEventListener('click', () => {
+      loseAlertOverlay.classList.remove('active');
+    });
     document.getElementById("submit").onclick = function() {submitCategory()};
     
     const urlParams = parseUrlParams();
@@ -136,7 +159,7 @@ function submitCategory() {
         allIsInSameCategory(selectedItems)
         var hasLostGame = lostdaGame();
         if (hasLostGame === true && lostGame === false) {
-            alert("You lost, you can continue! But I just need you to know you lost.")
+            loseAlertOverlay.classList.add('active');
             lostGame = true;
         }
     } else {
@@ -244,14 +267,5 @@ function correctCategory() {
 }
 
 function victory() {
-    alertOverlay.classList.add('active');
+    winAlertOverlay.classList.add('active');
 }
-
-  closeAlertButton.addEventListener('click', () => {
-    alertOverlay.classList.remove('active');
-  });
-
-  const okButton = document.getElementById('okButton');
-  okButton.addEventListener('click', () => {
-    alertOverlay.classList.remove('active');
-  });
