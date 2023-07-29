@@ -40,10 +40,20 @@ function selectItem(event) {
 
   if (selectedItem.classList.contains('selected')) {
     selectedItem.classList.remove('selected');
-    selectedItems = selectedItems.filter(item => item !== selectedCategory);
+    var selectedElements = document.getElementsByClassName("selected");
+    selectedItems = [];
+    for (var s = 0; s < selectedElements.length; s++) {
+      selectedItems.push(selectedElements[s].innerHTML);
+    }
+    //selectedItems = selectedItems.filter(item => item !== selectedCategory);
   } else if (selectedItems.length < 4) {
     selectedItem.classList.add('selected');
     selectedItems.push(selectedCategory);
+    selectedItem.classList.add("cell-animation-selected");
+    //item.classList.remove('selected');
+    setTimeout(() => {
+      selectedItem.classList.remove("cell-animation-selected");
+    }, 100);
   }
 }
 
@@ -151,6 +161,7 @@ function handleButtonClick() {
         defeatModal.showModal();
       }
     } else {
+      console.log(selectedItems);
       alert("Please choose 4");
     }
   }

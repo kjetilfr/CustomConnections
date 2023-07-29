@@ -1,6 +1,30 @@
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url(./../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url(./../fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url(./../fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url(./../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url(./../fonts/Roboto-Thin.ttf);
+}
+
 body {
     position: relative;
-    font-family: Arial, sans-serif;
     margin: 20px auto;
     max-width: 600px;
     padding: 20px;
@@ -16,28 +40,31 @@ body {
 }
 
 .item {
+  font-family: "Roboto-Bold", sans-serif;
   padding: 20px;
-  background-color: lightblue;
+  background-color: #EFEFE6;
   border: 1px solid #ccc;
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
   
 .item:hover {
-    background-color: lightblue;
-    box-shadow: 0 0 5px 0 lightblue inset, 0 0 5px 2px lightblue;
+  background-color: #EFEFE6;
+  box-shadow: 0 0 5px 0 #EFEFE6 inset, 0 0 5px 2px #EFEFE6;
 }
 
 .item.selected {
-    background-color: green;
-    color: white;
-  }
+  background-color: #675B5B;
+  color: white;
+}
   
-  .item.selected:hover {
-      box-shadow: 0 0 5px 0 green inset, 0 0 5px 2px green;
-      color: white;
-  }
+.item.selected:hover {
+  box-shadow: 0 0 5px 0 #675B5B inset, 0 0 5px 2px #675B5B;
+  color: white;
+}
 
 button {
   display: block;
@@ -55,69 +82,72 @@ button {
 }
 
 .full-row {
-    display: grid;
-    gap: 10px;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
+  font-family: "Roboto-Regular", sans-serif;
+  display: grid;
+  gap: 10px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  white-space: nowrap;
+}
   
 b {
-    display: contents;
+  font-family: "Roboto-Bold", sans-serif;
+  display: contents;
 }
 
-  .cell-animation {
-    animation: swap 0.5s;
-  }
+.cell-animation {
+  animation: swap 0.5s;
+}
   
-  @keyframes swap {
-    0% { transform: scale(1, 1); }
-    100% { transform: scale(0, 0); }
-  }
+@keyframes swap {
+  0% { transform: scale(1, 1); }
+  100% { transform: scale(0, 0); }
+}
 
 .cell-animation-reverse {
-    animation: swap-reverse 0.5s;
+  animation: swap-reverse 0.5s;
 }
   
 @keyframes swap-reverse {
-    0% { transform: scale(0, 0); }
-    100% { transform: scale(1, 1); }
+  0% { transform: scale(0, 0); }
+  100% { transform: scale(1, 1); }
 }
 
 button {
-    display: block;
-    margin: 20px auto;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  background-color: white;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-    box-shadow: 0 0 10px 0 #007bff inset, 0 0 10px 2px #007bff;
-    border: 2px solid black;
+  box-shadow: 0 0 2px 0 black inset, 0 0 2px 0 black;
+  border: 2px solid black;
 }
 
 h1 {
-    text-align: center;
+  font-family: "Roboto-Black", sans-serif;
+  text-align: center;
 }
 
 .cell-animation-shake {
-    animation: tilt-shaking 0.2s;
+  animation: tilt-shaking 0.2s;
 }
 
 @keyframes tilt-shaking {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(0eg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
-  }
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
 
 body {
     border-style: double;
@@ -125,46 +155,46 @@ body {
 }
 
 .question-button {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    color: #555;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 5px;
-    border-radius: 50%;
-  }
-
-  /* Tooltip */
-  .tooltip {
-    display: none;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    top: -25px;
-    right: 20px;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s;
-    word-wrap: break-word;
-    overflow: hidden;
-  }
-
-.question-button:hover {
-    background-color: transparent;
-    border: transparent;
-    border-style: none;
-    box-shadow: none;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 50%;
 }
 
-  .question-button:hover ~ .tooltip,
- .tooltip:hover {
+/* Tooltip */
+.tooltip {
+  font-family: "Roboto-Bold", sans-serif;
+  display: none;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.question-button:hover {
+  background-color: transparent;
+  border: transparent;
+  border-style: none;
+  box-shadow: none;
+}
+
+.question-button:hover ~ .tooltip, .tooltip:hover {
   display: block;
   opacity: 1;
 }
@@ -172,4 +202,22 @@ body {
 .modal {
     position: relative;
     top: -30%;
+}
+
+
+.cell-animation-selected {
+  animation: select-Item 0.2s;
+}
+
+@keyframes select-Item {
+  0% { transform: scale(1, 1); }
+  100% { transform: scale(0.8, 0.8); }
+}
+
+#livesText {
+  font-family: "Roboto-Regular", sans-serif;
+}
+
+#amountOfLives{
+  font-family: "Roboto-Bold", sans-serif;
 }
