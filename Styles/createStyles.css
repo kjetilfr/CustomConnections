@@ -201,3 +201,23 @@ body, h1, h2, label, button, input {
     max-width: 100%; /* Reset the maximum width to take up the full width */
   }
 }
+
+#difficulty {
+    display: inline;
+}
+
+.yellowOption {
+    background-color: #FBD400;
+}
+
+.greenOption {
+    background-color: #B5E352;
+}
+
+.blueOption {
+    background-color: #729EEB;
+}
+
+.purpleOption {
+    background-color: #BC70C4;
+}

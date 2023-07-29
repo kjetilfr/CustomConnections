@@ -29,6 +29,7 @@ function getData() {
     category1.push(document.getElementById("category1Answer3").value);
     category1.push(document.getElementById("category1Answer4").value);
     data.category1 = category1;
+    data.category1Color = document.getElementById("category1Color").value;
     var category2 = [];
     category2.push(document.getElementById("category2").value);
     category2.push(document.getElementById("category2Answer1").value);
@@ -36,6 +37,7 @@ function getData() {
     category2.push(document.getElementById("category2Answer3").value);
     category2.push(document.getElementById("category2Answer4").value);
     data.category2 = category2;
+    data.category2Color = document.getElementById("category2Color").value;
     var category3 = [];
     category3.push(document.getElementById("category3").value);
     category3.push(document.getElementById("category3Answer1").value);
@@ -43,6 +45,7 @@ function getData() {
     category3.push(document.getElementById("category3Answer3").value);
     category3.push(document.getElementById("category3Answer4").value);
     data.category3 = category3;
+    data.category3Color = document.getElementById("category3Color").value;
     var category4 = [];
     category4.push(document.getElementById("category4").value);
     category4.push(document.getElementById("category4Answer1").value);
@@ -50,6 +53,7 @@ function getData() {
     category4.push(document.getElementById("category4Answer3").value);
     category4.push(document.getElementById("category4Answer4").value);
     data.category4 = category4;
+    data.category4Color = document.getElementById("category4Color").value;
     data.lives = document.getElementById("lives").value;
     return data
 }

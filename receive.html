@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./Styles/receiveStyle.css">
+  <script src="./JScripts/receiveData.js"></script>
+  <script src="./JScripts/receive.js"></script>
   <title>Custom Connections</title>
-  <script src="./JScripts/recieveScript.js"></script>
-  <link rel="stylesheet" href="./Styles/ReceiveStyles.css">
 </head>
-<body>
-  <h1 id="titlePage">Custom Connections</h1>
-  <table id="table">
-    <tbody id="tbody"></tbody>
-  </table>
-  <div style="display: none" id="category1"></div>
-  <div style="display: none" id="category2"></div>
-  <div style="display: none" id="category3"></div>
-  <div style="display: none" id="category4"></div>
+<body id="body">
+  <h1>Custom Connections</h1>
+  <div id="correctGrid"></div>
+  <div id= "grid" class="grid">
+  </div>
+  <button class="question-button">
+    <!-- Cloudflare Question Mark Icon -->
+    <i class="fa fa-question-circle"></i>
+  </button>
+  <div class="tooltip">Click on four items of the same category to remove them.</div>
   <div id="livesText">Lives: <span id="amountOfLives"></span></div>
-  <button id="submit">Submit</button>
+  <button id="submit-btn">Submit</button>
+  <dialog class="modal" id="lost" data-modal>
+    <h1>You Lost!</h1>
+    <div>You can continue playing but you did lose.</div>
+    <button id="closeLost" data-close-modal>Close</button>
+  </dialog>
+  <dialog class="modal" id="won" data-modal>
+    <h1>You Won!</h1>
+    <div>Hurray, you did amazing!</div>
+    <button id="closeWon" data-close-modal>Close</button>
+  </dialog>
 </body>
 </html>
