@@ -92,37 +92,32 @@ function tableCreate() {
         allElementsYouCanPickFrom.push(category4[k]);
     }
     
-    // cells creation
-    for (var j = 0; j < 4; j++) {
-        // table row creation
-        //var row = document.createElement("row");
-
-        for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < allElementsYouCanPickFrom.length; i++) {
             // create element <td> and text node 
             //Make text node the contents of <td> element
             // put <td> at end of the table row
             var div = document.createElement("div");
             div.classList.add("item");
             var element = Math.floor(Math.random() * allElementsYouCanPickFrom.length)
-            var divText = document.createTextNode(allElementsYouCanPickFrom[element]);
+            var divText = document.createTextNode(allElementsYouCanPickFrom[i]);
             //console.log(category1);
-                if (allElementsYouCanPickFrom[element] === category1[i]) {
-                    div.dataset.difficulty = category1Color;
-                    div.dataset.category = category1Name;
-                } else if (allElementsYouCanPickFrom[element] === category2[i]) {
-                    div.dataset.difficulty = category2Color;
-                    div.dataset.category = category2Name;
-                } else if (allElementsYouCanPickFrom[element] === category3[i]) {
-                    div.dataset.difficulty = category3Color;
-                    div.dataset.category = category3Name;
-                } else if (allElementsYouCanPickFrom[element] === category4[i]) {
-                    div.dataset.difficulty = category4Color;
-                    div.dataset.category = category4Name;
-                }
-            
-            
-            //Removed used element
-            allElementsYouCanPickFrom.splice(element, 1)
+            console.log(divText);
+            console.log(div);
+            console.log(category1);
+            console.log(category1.includes(divText.textContent));
+            if (category1.includes(divText.textContent)) {
+                div.dataset.difficulty = category1Color;
+                div.dataset.category = category1Name;
+            } else if (category2.includes(divText.textContent)) {
+                div.dataset.difficulty = category2Color;
+                div.dataset.category = category2Name;
+            } else if (category3.includes(divText.textContent)) {
+                div.dataset.difficulty = category3Color;
+                div.dataset.category = category3Name;
+            } else if (category4.includes(divText.textContent)) {
+                div.dataset.difficulty = category4Color;
+                div.dataset.category = category4Name;
+            }
 
             div.appendChild(divText);
             //cell.addEventListener("click",function(){
@@ -133,5 +128,4 @@ function tableCreate() {
         }
         //row added to end of table body
         //grid.appendChild(row);
-    }
 }
