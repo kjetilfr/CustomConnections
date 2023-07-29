@@ -100,11 +100,6 @@ function tableCreate() {
             div.classList.add("item");
             var element = Math.floor(Math.random() * allElementsYouCanPickFrom.length)
             var divText = document.createTextNode(allElementsYouCanPickFrom[i]);
-            //console.log(category1);
-            console.log(divText);
-            console.log(div);
-            console.log(category1);
-            console.log(category1.includes(divText.textContent));
             if (category1.includes(divText.textContent)) {
                 div.dataset.difficulty = category1Color;
                 div.dataset.category = category1Name;

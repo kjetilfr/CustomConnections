@@ -221,3 +221,8 @@ body {
 #amountOfLives{
   font-family: "Roboto-Bold", sans-serif;
 }
+
+dialog {
+  font-family: "Roboto-Regular", sans-serif;
+  border-radius: 5px;
+}

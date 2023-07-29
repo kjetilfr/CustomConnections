@@ -37,14 +37,15 @@ function shuffleItems() {
 function selectItem(event) {
   const selectedItem = event.target;
   const selectedCategory = selectedItem.dataset.category;
-
+console.log(selectedItems)
   if (selectedItem.classList.contains('selected')) {
     selectedItem.classList.remove('selected');
     var selectedElements = document.getElementsByClassName("selected");
     selectedItems = [];
     for (var s = 0; s < selectedElements.length; s++) {
-      selectedItems.push(selectedElements[s].innerHTML);
+      selectedItems.push(selectedElements[s].dataset.category);
     }
+    console.log(selectedItems)
     //selectedItems = selectedItems.filter(item => item !== selectedCategory);
   } else if (selectedItems.length < 4) {
     selectedItem.classList.add('selected');
