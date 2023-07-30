@@ -227,18 +227,3 @@ select {
   height: auto;
   width: auto;
 }
-
-option:checked,
-    option:hover {
-      box-shadow: 0 0 100px 100px #4ddc3b inset;
-    }
-
-option:focus {
-  background-color: black;
-  box-shadow: 0 0 100px 100px #4ddc3b inset;
-}
-
-#category2Color:focus {
-  border-color: #198754;
-  box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
-}
