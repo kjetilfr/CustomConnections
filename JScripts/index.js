@@ -51,7 +51,7 @@ function handleTextSubmit() {
 function goBack() {
     document.getElementById("submitButton").remove();
     document.getElementById("textInput").remove();
-    createButton.r
+    //createButton.r
     loadButton.remove();
     const createButton = document.getElementById("create");
     const loadButton = document.getElementById("load");
