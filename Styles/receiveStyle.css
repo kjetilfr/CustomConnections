@@ -130,6 +130,7 @@ button {
 button:hover {
   box-shadow: 0 0 2px 0 black inset, 0 0 2px 0 black;
   border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.048);
 }
 
 h1 {
