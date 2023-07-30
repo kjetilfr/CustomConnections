@@ -3,6 +3,11 @@ window.onload = run;
 var count = 0;
 
 function run() {
+    selectBackgrounds();
+    document.querySelector("#category1Color").onchange = function() {selectBackgrounds()};
+    document.querySelector("#category2Color").onchange = function() {selectBackgrounds()};
+    document.querySelector("#category3Color").onchange = function() {selectBackgrounds()};
+    document.querySelector("#category4Color").onchange = function() {selectBackgrounds()};
     document.getElementById("category2Content").style.display = "none";
     document.getElementById("category3Content").style.display = "none";
     document.getElementById("category4Content").style.display = "none";
@@ -17,6 +22,7 @@ function nextCategory(counter) {
         if (document.getElementById("category1").value !== "" && document.getElementById("category1Answer1").value !== "" && document.getElementById("category1Answer2").value !== "" && document.getElementById("category1Answer3").value !== "" && document.getElementById("category1Answer4").value !== "") {
             document.getElementById("category1Content").style.display = "none";
             document.getElementById("category2Content").style.display = "block";
+            
             count ++;
         } else {
             alert("Please fill all fields")
@@ -91,9 +97,9 @@ function copyLinkToClipboard() {
     document.execCommand('copy');
     document.body.removeChild(tempTextArea);
     alert('Link copied to clipboard!');
-  }
+}
 
-  function copyCodeToClipboard() {
+function copyCodeToClipboard() {
     const generatedLinkText = document.getElementById('generatedCode').innerText;
     const tempTextArea = document.createElement('textarea');
     tempTextArea.value = generatedLinkText;
@@ -102,4 +108,55 @@ function copyLinkToClipboard() {
     document.execCommand('copy');
     document.body.removeChild(tempTextArea);
     alert('Code copied to clipboard!');
-  }
+}
+
+function selectBackgrounds() {
+    var difficultyElement = document.querySelector("#category1Color");
+    if (difficultyElement.value == "yellow") {
+        difficultyElement.style.backgroundColor = "#FBD400";
+    } else if (difficultyElement.value == "green") {
+        difficultyElement.style.backgroundColor = "#B5E352";
+    } else if (difficultyElement.value == "blue") {
+        difficultyElement.style.backgroundColor = "#729EEB";
+    } else if (difficultyElement.value == "purple") {
+        difficultyElement.style.backgroundColor = "#BC70C4";
+    } else {
+        difficultyElement.style.backgroundColor = "white";
+    }
+    var difficultyElement = document.querySelector("#category2Color");
+    if (difficultyElement.value == "yellow") {
+        difficultyElement.style.backgroundColor = "#FBD400";
+    } else if (difficultyElement.value == "green") {
+        difficultyElement.style.backgroundColor = "#B5E352";
+    } else if (difficultyElement.value == "blue") {
+        difficultyElement.style.backgroundColor = "#729EEB";
+    } else if (difficultyElement.value == "purple") {
+        difficultyElement.style.backgroundColor = "#BC70C4";
+    } else {
+        difficultyElement.style.backgroundColor = "white";
+    }
+    var difficultyElement = document.querySelector("#category3Color");
+    if (difficultyElement.value == "yellow") {
+        difficultyElement.style.backgroundColor = "#FBD400";
+    } else if (difficultyElement.value == "green") {
+        difficultyElement.style.backgroundColor = "#B5E352";
+    } else if (difficultyElement.value == "blue") {
+        difficultyElement.style.backgroundColor = "#729EEB";
+    } else if (difficultyElement.value == "purple") {
+        difficultyElement.style.backgroundColor = "#BC70C4";
+    } else {
+        difficultyElement.style.backgroundColor = "white";
+    }
+    var difficultyElement = document.querySelector("#category4Color");
+    if (difficultyElement.value == "yellow") {
+        difficultyElement.style.backgroundColor = "#FBD400";
+    } else if (difficultyElement.value == "green") {
+        difficultyElement.style.backgroundColor = "#B5E352";
+    } else if (difficultyElement.value == "blue") {
+        difficultyElement.style.backgroundColor = "#729EEB";
+    } else if (difficultyElement.value == "purple") {
+        difficultyElement.style.backgroundColor = "#BC70C4";
+    } else {
+        difficultyElement.style.backgroundColor = "white";
+    }
+}

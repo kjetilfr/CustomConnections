@@ -205,7 +205,6 @@ body {
     top: -30%;
 }
 
-
 .cell-animation-selected {
   animation: select-Item 0.2s;
 }
@@ -227,3 +226,8 @@ dialog {
   font-family: "Roboto-Regular", sans-serif;
   border-radius: 5px;
 }
+
+option:hover {
+  color: #444645;
+  background: #ddd;
+  }

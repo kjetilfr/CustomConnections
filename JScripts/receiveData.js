@@ -98,7 +98,6 @@ function tableCreate() {
             // put <td> at end of the table row
             var div = document.createElement("div");
             div.classList.add("item");
-            var element = Math.floor(Math.random() * allElementsYouCanPickFrom.length)
             var divText = document.createTextNode(allElementsYouCanPickFrom[i]);
             if (category1.includes(divText.textContent)) {
                 div.dataset.difficulty = category1Color;
